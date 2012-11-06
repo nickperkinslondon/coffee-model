@@ -1,5 +1,7 @@
 cm = require '../coffee-model'
 expect = require 'expect.js'
+say = console.log
+
 
 describe 'Model.Set',->
 

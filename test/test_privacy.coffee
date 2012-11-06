@@ -12,12 +12,6 @@ class Pet extends cm.Model
 describe 'Model Private Functions',->
   describe 'cannot_be_called',->
 
-    it 'emit',->
-      p = new Pet()
-      f = ->
-        p.emit 'some-event'
-      expect(f).to.throwError()
-
 
     it '_save',->
       p = new Pet()
@@ -37,3 +31,11 @@ describe 'Model Private Functions',->
     it '_valid',->
       p = new Pet()
       expect(p.valid).to.be(undefined)
+
+
+describe 'Emit is not private',->
+  describe 'so you can all it',->
+    it 'it works', (done)->
+      p = new Pet()
+      p.emit 'fdsa'
+      done()
